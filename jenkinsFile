@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkOut') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Novman47/ansible-test.git'
+            }
+        }
+        stage('Running Ansible-Playbook') {
+            steps {
+                ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'webserver.inv', playbook: 'install-apache.yaml'
+            }
+        }
+    }
+}
