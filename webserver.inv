@@ -1,2 +1,3 @@
 [webserver]
-ip ansible_user=ubuntu
+18.206.124.231 ansible_user=ubuntu
+44.201.87.200 ansible_user=ubuntu
